@@ -1,0 +1,8 @@
+body {
+    height: 100vh;
+    background-color: blue;
+}
+
+.cover-container {
+    width: 60vw;
+}

@@ -76,56 +76,6 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-// const scriptSrcUrls = [
-//     "https://stackpath.bootstrapcdn.com/",
-//     "https://api.tiles.mapbox.com/",
-//     "https://api.mapbox.com/",
-//     "https://kit.fontawesome.com/",
-//     "https://code.jquery.com/",
-//     "https://cdnjs.cloudfare.com/",
-//     "https://cdn.jsdelivr.com/",
-// ];
-
-// const styleSrcUrls = [
-//     "https://stackpath.bootstrapcdn.com/",
-//     "https://api.tiles.mapbox.com/",
-//     "https://api.mapbox.com/",
-//     "https://kit-free.fontawesome.com/",
-//     "https://use.fontawesome.com/",
-//     "https://font.googleapis.com/",
-
-// ];
-
-// const connectSrcUrls = [
-//     "https://a.tiles.mapbox.com/",
-//     "https://b.tiles.mapbox.com/",
-//     "https://api.mapbox.com/",
-//     "https://events.mapbox.com/",
-// ];
-
-// const fontSrcUrls = [];
-
-// app.use(
-//     helmet.contentSecurityPolicy({
-//         directives: {
-//             defaultSrc: [],
-//             connectSrc: ["'self'", ...connectSrcUrls],
-//             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
-//             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-//             workerSrc: ["'self'", "blob:"],
-//             objectSrc: [],
-//             imgSrc: [
-//                 "'self'",
-//                 "blob:",
-//                 "data:",
-//                 "https://res.cloudinary.com/YOURNAME/",
-//                 "https://images.unsplash.com/",
-//             ],
-//             fontSrc: ["'self'", ...fontSrcUrls],
-//         },
-//     })
-// );
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -159,7 +109,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err });
 })
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const port = process.env.PORT || 4000;
+app.listen(4000, () => {
     console.log(`Serving on port ${port}`)
 })

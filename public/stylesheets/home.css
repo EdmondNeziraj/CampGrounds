@@ -1,8 +1,26 @@
 body {
     height: 100vh;
-    background-color: blue;
+    /* background-color: blue; */
+    border: 1px solid red;
 }
 
 .cover-container {
-    width: 60vw;
+    /* max-width: 60vw; */
+    background-color: rebeccapurple;
+}
+
+.nav-link {
+    color: rgba(255, 255,255, 0.5);
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255,255, 0.5);
+    border-bottom: 0.25rem solid rgba(255, 255,255, 0.5);
+
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color: white;
 }

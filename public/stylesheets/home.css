@@ -1,12 +1,16 @@
 body {
     height: 100vh;
     /* background-color: blue; */
-    border: 1px solid red;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("https://images.unsplash.com/photo-1601134917279-ef70a0a90f18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: bottom;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
-.cover-container {
-    /* max-width: 60vw; */
-    background-color: rebeccapurple;
+.welcome-text {
+    margin: auto 0;
 }
 
 .nav-link {

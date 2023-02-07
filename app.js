@@ -22,6 +22,8 @@ const MongoStore = require('connect-mongo');
 const MongoDBStore = require("connect-mongo")(session);
 
 const db_url = process.env.DB_URL || 'mongodb://localhost:27017/campgrounds';
+console.log(db_url);
+
 
 mongoose.connect(db_url, {
     useNewUrlParser: true,

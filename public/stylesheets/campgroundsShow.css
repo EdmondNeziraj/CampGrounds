@@ -25,3 +25,12 @@
     border-top: 1px solid rgba(0, 0, 0, 0.125);
     padding-left: 0;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-btn {
+    align-self: flex-end;
+}

@@ -1,44 +1,32 @@
 <% layout('layouts/boilerplate')%>
 
+<link rel="stylesheet" type="text/css" href="/stylesheets/campgroundsIndex.css">
+
 <div id="map" style="width: 100%; height: 500px"></div>
-<h1 class="my-3">All Campgrounds</h1>
+<h2 class="my-3">All Campgrounds</h2>
 <div class="row campground-card-container">
     <% for (let campground of campgrounds) {%>
-        <div class="col-4">
-            <div class="card mb-3">
-                <div class="row">
-                  <div class="col-md-4">
-                    <% if (campground.images.length) {%>
-                    <img class="img-fluid" src="<%= campground.images[0].url %>" alt=""> 
-                    <%} else {%> 
-                    <img class="img-fluid" src="https://res.cloudinary.com/dcno0ppgb/image/upload/v1668554407/CampGrounds/ibp2o6klrsdl7jelmrfx.jpg" alt=""> 
-                    <%};%>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body ">
-                      <h5 class="cg-title card-title"><a class="cg-title" href="/campgrounds/<%=campground._id%>"><%=campground.title%></a></h5>
-                      <!-- <p class="card-text description-text"><%= campground.description%></p> -->
-                      <p class="cg-location card-text text-muted "><%= campground.location%></p>
-                      <p class="cg-price card-text text-muted ">$<%= campground.price%></p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card mb-3">
+            <% if (campground.images.length) {%>
+            <% let url = campground.images[0].url; let replaceString = "c_fill,h_500,w_500"; let newUrl = url.replace("upload/", `upload/${replaceString}/`);%>
+            <a href="/campgrounds/<%=campground._id%>"><img class="card-img-top" src="<%= newUrl %>" alt=""></a>
+            <%} else {%>
+            <% let url = "https://res.cloudinary.com/dcno0ppgb/image/upload/v1668554407/CampGrounds/ibp2o6klrsdl7jelmrfx.jpg"; let replaceString = "c_fill,h_500,w_500"; let newUrl = url.replace("upload/", `upload/${replaceString}/`);%>
+            <img class="card-img-top" src="<%= newUrl %>" alt=""> 
+            <%};%>
+            <div class="card-body">
+              <h6 class="card-title "><a class="campground-title" href="/campgrounds/<%=campground._id%>"><%=campground.title%></a></h6>
+                <p class="card-text text-muted campground-location"><%= campground.location%></p>
+                <p class="card-text text-muted ">$<%= campground.price%> night</p>
+            </div>
+          </div>
         </div>
         
     <% };%>
 </div>
 
-<style>
-  .cg-title {
-    text-decoration: none;
-    color: #212529;
-  }
-  .cg-location {
-    margin: 8px 0;
-  }
-</style>
+
 
 <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';

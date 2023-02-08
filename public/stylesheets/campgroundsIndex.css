@@ -1,10 +1,21 @@
-.cg-title {
-    color: #212529;
-    text-decoration: none;
+  .card {
+      border: none
+  }
 
+  .card-img-top {
+      border-radius: 8px;
+  }
 
-}
+  .card-body {
+      margin-left: 0;
+      padding-left: 0;
+  }
 
-.cg-location {
-    margin: 8px 0;
-}
+  .campground-title {
+      text-decoration: none;
+      color: #212529;
+  }
+
+  .campground-location {
+      margin: 8px 0;
+  }

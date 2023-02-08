@@ -1,0 +1,27 @@
+.card {
+    border: none;
+}
+
+.card-body {
+    padding-left: 0;
+}
+
+.card-title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.list-group-item {
+    padding-left: 0;
+    border: none;
+}
+
+.review-text {
+    margin-top: -16px;
+}
+
+.card-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    padding-left: 0;
+}

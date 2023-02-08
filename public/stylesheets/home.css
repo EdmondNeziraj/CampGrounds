@@ -25,7 +25,6 @@ body {
 .nav-link:hover {
     color: rgba(255, 255,255, 0.5);
     border-bottom: 0.25rem solid rgba(255, 255,255, 0.5);
-
 }
 
 .nav-link.active {

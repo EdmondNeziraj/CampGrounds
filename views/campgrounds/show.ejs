@@ -70,7 +70,7 @@
             <div id='map' style='width: 100%; height: 300px; margin-bottom: 16px;'></div>
             <% if(currentUser) { %>
                 <h5>Leave a Review</h5>
-                <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form"
+                <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form review-form"
                     novalidate>
                     <div class="review">
                         <div class="mb-1 review-stars">
@@ -101,7 +101,7 @@
                 <%};%>
                     <% for(let review of campground.reviews) {%>
                         <div class="card mb-2">
-                            <div class="card-body">
+                            <div class="card-body existing-review">
                                 <h5 class="card-title">
                                     <%= review.author.username%>
                                 </h5>
@@ -113,7 +113,8 @@
                                 <% if(currentUser && review.author.equals(currentUser._id)) {%>
                                     <form
                                         action="/campgrounds/<%= campground._id%>/reviews/<%=review._id%>?_method=DELETE"
-                                        method="POST">
+                                        method="POST"
+                                        class="delete-btn-form">
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </form>
                                     <%};%>

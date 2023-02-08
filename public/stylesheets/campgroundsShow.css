@@ -26,11 +26,22 @@
     padding-left: 0;
 }
 
-form {
+.review-form {
     display: flex;
     flex-direction: column;
+
 }
 
 .submit-btn {
+    align-self: flex-end;
+}
+
+.existing-review {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+}
+
+.delete-btn-form {
     align-self: flex-end;
 }
